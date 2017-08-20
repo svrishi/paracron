@@ -1,0 +1,13 @@
+<title>Paracron Job Scheduler</title>
+<h4>{{ project }} tasks run history</h4>
+<ul>
+{% for run in task_runs %}
+  <li>
+        Task '{{ run.run_name() }}' cmd: {{ run.ran_cmd() }} started at {{ run.started_at }} done at {{ run.done_at }}
+        stdout:
+        <pre> {{ run.stdout_logs }} </pre>
+        stderr:
+        <pre> {{ run.stderr_logs }} </pre>
+  </li>
+{% endfor %}
+</ul>
